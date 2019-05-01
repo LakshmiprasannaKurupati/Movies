@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        android:background="@color/colorAccent"
+        tools:context=".DetailActivity">
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="180dp"
+            android:id="@+id/imageview"
+            android:layout_margin="5dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv1"
+            android:layout_margin="5dp"
+            android:text="TITLE"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absolutey="205dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv3"
+            android:layout_margin="5dp"
+            android:text="RATING"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absolutey="235dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv5"
+            android:layout_margin="5dp"
+            android:text="RELASE DATE"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absolutey="280dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv7"
+            android:layout_margin="5dp"
+            android:text="DESCRIPTION"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absolutey="340dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv4"
+            android:layout_margin="5dp"
+            android:text="Favourtes"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absolutey="315dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text="Add Favourate movies"/>
+
+            <com.like.LikeButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/heart_button"
+                app:icon_size="25dp"
+                app:icon_type="heart"
+                android:layout_weight="1"
+                app:anim_scale_factor="2"
+                app:is_enabled="true"
+                app:liked="false"
+                app:circle_start_color="@color/colorPrimaryDark"
+                app:circle_end_color="#000"
+                app:like_drawable="@drawable/heart_on"
+                app:unlike_drawable="@drawable/heart_off"
+                app:dots_primary_color="#FF5722"
+                app:dots_secondary_color="@color/colorPrimaryDark"
+                android:layout_margin="5dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absolutey="170dp"/>>
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_vidoes"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="30dp"
+            android:text="Vidoes"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+        <!--app:layout_ConstraintTop_toBottomOf="@+id/recyclerview_review"/>-->
+        <!--app:layout_ConstraintEnd_toEndOf="parent"
+        app:layout_ConstraintHorizontal_bias="0.0"
+        app:layout_ConstraintLeft_toLeftOf="parent"
+        app:layout_ConstraintStart_toStartOf="parent"-->
+        app:layout_ConstraintTop_toBottomOf="@+id/recyclerview_review"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerview_vidoes"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="8dp"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv9"
+                android:hint="No Updates Available"
+                android:text="Reviews:"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                />
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerview_review"
+                android:layout_margin="5dp"
+                android:background="@color/colorPrimary">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
